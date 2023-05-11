@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap'); 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAV ITEM ************/
+
+.nav_item::after {
+    content: '';
+    position: absolute;
+    background: #253469;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-101%);
+    transition: transform 0.15s ease;
+}
+
+.nav_item:hover::after {
+    transform: translateX(0);
+}
+
+/* SELECT ************/
+
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+}
+
+/* CHECKBOX ************/
+
+.checkbox {
+    box-shadow: 0 0 0 1.5px var(--color-gray-dark);
+  }
+  
+  .checkbox:hover,
+  .checkbox:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1.5px var(--color-primary);
+  }
+  
+  .checkbox:hover .checkbox__icon,
+  .checkbox:focus .checkbox__icon {
+    color: var(--color-primary);
+  }
+  
+  .checkbox [data-state='checked'] {
+    display: flex;
+  }
+
+
+/* .border-text {
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Kameron";
+} */
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}

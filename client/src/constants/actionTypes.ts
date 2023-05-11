@@ -1,0 +1,11 @@
+export const AUTH = "AUTH";
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
+export const LOGOUT = "LOGOUT";
+
+export const ADD_CART_ITEM = "ADD_CART_ITEM";
+export const REMOVE_CART_ITEM = "DELETE_CART_ITEM";
+export const PATCH_CART_ITEM = "PATCH_CART_ITEM";
+export const RESET_CART_ITEMS = "RESET_CART_ITEMS";
+
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const GET_FEATURED_PRODUCTS = "GET_FEATURED_PRODUCTS";

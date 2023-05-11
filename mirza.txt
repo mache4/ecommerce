@@ -1,0 +1,29 @@
+MAIN
+- PRATITI LAMA DEV
+- category categories jacket jackets znas sta mislim (category i jacket moze)
+- menjanje filter-a na osnovu url-a (koristiti useMemo ili useCallback zbog infinite loop-a) (mozda koristiti redux..)
+- stilizovati cart i napraviti dropdown za profile
+- dodati featured products sliku i text na slider-u
+- loader-i, error-i i modal-i (KORISTITI props.children ZA DODATNE MODAL-E)
+- token za cartItems u localStorage-u
+- stripe payment
+
+MANJE BITNO
+- paginating
+- stilizovanje ProductCard-a
+- stavtiti automatski ime i broj category-a is databaze u filterima (Jeans (2))
+- ispraviti sve typescript propuste
+- dodati jos product-a
+- napraviti error page za pogresan route (layout component)
+- izvuci categories iz databaze za CategoriesDropdown i filters
+
+RESPONSIVE
+- filters da bude sidebar na manjim ekranima
+- navbar kao sidebar (mozda napraviti sidebar da se koristi na vise componenata)
+- footer smanjiti
+
+POSTUPLOAD
+- napraviti process.env
+- uploadovati ceo projekat pa onda pojedinacno server i client zbog hostovanja (ova dva privatno)
+- nece se zvati shirts... (Faz eCommerce)
+- slider laguje ali to je vrv do debug-a, kada se aplikacija builduje nece biti lagav
