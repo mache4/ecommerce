@@ -1,14 +1,11 @@
 import { useContext } from "react";
 import { OverlayContext } from "../contexts/OverlayContext";
-import { SigninContext } from "../contexts/SigninContext";
 
 const Overlay = () => {
     const { overlay, setOverlay } = useContext(OverlayContext);
-    const { setSignin } = useContext(SigninContext);
 
     const clicked = () => {
         setOverlay(false);
-        setSignin(false);
     }
 
     return (

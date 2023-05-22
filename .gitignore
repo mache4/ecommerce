@@ -13,4 +13,4 @@ build/
 dist/
 client/.parcel-cache
 
-mirza.txt
+/mirza.txt

@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="w-1/4">
                 <h1 className="text-lg">About</h1>
-                <p className="text-dark-grey mt-2 leading-7">This app is MERN stack based. It is full functional store app with Strapi as contact management system and Stripe for payment processing. For styling TailwindCSS is used.</p>
+                <p className="text-dark-grey mt-2 leading-7">This app's client side is based on React. It is full functional store app with Strapi as contact management system and Stripe for payment processing. TailwindCSS is used for styling.</p>
             </div>
         </div>
     );

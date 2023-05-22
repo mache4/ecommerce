@@ -3,7 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const timeoutRef: any = useRef(null);
+    const timeoutRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const delay = 5000;
 
     function resetTimeout() {
