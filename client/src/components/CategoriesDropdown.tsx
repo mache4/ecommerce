@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useCategories } from "../core/hooks";
-import type { Category } from "../core/types";
+import type { CategoryType } from "../core/types";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -14,12 +14,12 @@ const CategoriesDropdown = (props: Props) => {
     return (
         <div className={`absolute top-full left-0 border border-t-0 border-dark-blue bg-white z-50 ${props.show ? "" : "hidden"}`} style={{ width: "200%" }}>
             <div className="menu flex flex-col">
-                {items.map((i: { id: number, attributes: Category }) => {
+                {items.map((i: { id: number, attributes: CategoryType }) => {
                     const { value, name } = i.attributes;
                     return <Link
                         key={i.id}
                         className="menu-item border-t px-5 py-2 hover:bg-very-light-blue"
-                        to={`/shop?sort=createdAt&categories=${value}`}>{name}</Link>;
+                        to={`/shop?sort=createdAt&maxPrice=0&categories=${value}`}>{name}</Link>;
                 })}
             </div>
         </div>

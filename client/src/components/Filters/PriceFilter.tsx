@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { debounce } from "lodash";
 
 const PriceFilter = () => {
     const [search, setSearch] = useSearchParams();
-    const value = search.get("maxPrice")?.toLowerCase() ?? "";
+    const value = useMemo(() => search.get("maxPrice")?.toLowerCase() ?? 0, [search]);
     const [maxPrice, setMaxPrice] = useState(value);
+
+    useEffect(() => {
+        setMaxPrice(value);
+    }, [value]);
 
     const setValue = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.value === "0")

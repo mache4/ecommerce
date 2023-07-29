@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductType {
     id: number,
     name: string,
     img1: any,
@@ -6,25 +6,25 @@ export interface Product {
     price: number
 }
 
-export interface Category {
+export interface CategoryType {
     id: number,
     name: string,
     value: string
 }
 
-export interface Query {
+export interface QueryType {
     categories: string[] | null,
     sort: string | null,
     maxPrice: number | null,
 }
 
-export interface Sorting {
+export interface SortingType {
     id: number,
     name: string,
     value: string,
 }
 
-export interface CartItem {
+export interface CartItemType {
     id: number,
     name: string,
     image: any,

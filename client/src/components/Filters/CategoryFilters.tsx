@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useCategories } from "../../core/hooks";
-import type { Category } from "../../core/types";
+import type { CategoryType } from "../../core/types";
 import { useSearchParams } from "react-router-dom";
 
 const CategoryFilters = () => {
@@ -13,7 +13,7 @@ const CategoryFilters = () => {
 
     useEffect(() => {
         setCategories(filteredCategories);
-    }, [filteredCategories])
+    }, [filteredCategories]);
 
     const setCheckValue = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
         let _categories = categories;
@@ -34,7 +34,7 @@ const CategoryFilters = () => {
     return (
         <div className="py-8 border-t border-dark-grey">
             <h1 className="text-xl text-left mb-4">CATEGORIES</h1>
-            {items.map((field: { attributes: Category }) => {
+            {items.map((field: { attributes: CategoryType }) => {
                 const { id, name, value } = field.attributes;
                 return <div className="flex justify-between my-2" key={id}>
                     <label>{name}</label>

@@ -44,7 +44,7 @@ const Product = () => {
                         <img className="w-1/4 border border-light-grey object-cover cursor-pointer hover:border-2 hover:border-black" src={`http://localhost:1337${data?.attributes.img1.data.attributes.url}`} alt="" onClick={() => setActiveImage(true)} />
                         <img className="w-1/4 border border-light-grey object-cover cursor-pointer hover:border-2 hover:border-black" src={`http://localhost:1337${data?.attributes.img2.data.attributes.url}`} alt="" onClick={() => setActiveImage(false)} />
                     </div>
-                    <button className="text-xl bg-blue text-white m-5 px-8 py-4 disabled:bg-light-grey" disabled={itemExists(cartItems, Number(id))} onClick={addToCart}>ADD (TO CART)</button>
+                    <button className="text-xl bg-blue text-white m-5 px-8 py-4 disabled:bg-light-grey" disabled={itemExists(cartItems, Number(id))} onClick={addToCart}>ADD TO CART</button>
                 </div>
             </div>
         </div>

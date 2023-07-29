@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { removeCartItem } from "../redux/actions/cartItems";
 import { useAppDispatch, useAppSelector } from "../core/hooks";
-import type { CartItem } from "../core/types";
+import type { CartItemType } from "../core/types";
+import { FaTrashAlt } from "react-icons/fa";
 
 interface Props {
     show: boolean
@@ -12,11 +12,11 @@ const CartDropdown = (props: Props) => {
     let totalPrice = 0;
 
     return (
-        <div className={`absolute flex flex-col justify-center items-center border w-80 top-full right-0 bg-white z-50 ${props.show ? "" : "hidden"}`} style={{ minHeight: "15rem" }}>
-            {cartItems.length === 0 && <p className="text-light-grey font-thin">Cart is empty.</p>}
+        <div className={`absolute flex flex-col justify-center items-center border-2 border-dark-blue w-80 top-full right-0 bg-white z-50 ${props.show ? "" : "hidden"}`} style={{ minHeight: "15rem" }}>
+            {cartItems.length === 0 && <p className="text-dark-blue font-thin">Cart is empty.</p>}
             {cartItems.length > 0 && <>
                 <div className="overflow-auto" style={{ height: "25rem" }}>
-                    {cartItems?.map((i: CartItem) => {
+                    {cartItems?.map((i: CartItemType) => {
                         console.log(i.id)
                         totalPrice += i.price;
                         return <CartItem
@@ -27,14 +27,19 @@ const CartDropdown = (props: Props) => {
                             price={i.price} />;
                     })}
                 </div>
-                <p className="border w-full text-center">Total Price: ${totalPrice}</p>
-                <button>Proceed</button>
+                <div className="text-center py-1 px-2 w-full flex flex-row items-center" style={{ boxShadow: "0 -2px 4px #ccc" }}>
+                    <div className="w-1/2">
+                        <p className="text-center my-1">Total Price</p>
+                        <p className="text-center my-1">${totalPrice}</p>
+                    </div>
+                    <button className="w-1/2 border px-4 py-1">Proceed</button>
+                </div>
             </>}
         </div>
     );
 }
 
-const CartItem = (props: CartItem) => {
+const CartItem = (props: CartItemType) => {
     const dispatch = useAppDispatch();
     const { id, name, image, price } = props;
 
@@ -43,13 +48,13 @@ const CartItem = (props: CartItem) => {
     }
 
     return (
-        <div className="flex items-center border px-4">
+        <div className="relative flex items-center shadow-md mb-1">
             <img className="object-cover w-1/2" src={`http://localhost:1337${image.data.attributes.url}`} alt="" />
-            <div className="w-1/2">
+            <div className="w-1/2 text-left pl-2">
                 <p className="text-base">{name}</p>
                 <p className="text-base">${price}</p>
-                <button className="border text-base" onClick={() => removeItem(id)}>Remove Item</button>
             </div>
+            <button className="absolute top-0 right-0 m-4 text-base" onClick={() => removeItem(id)}><FaTrashAlt className="text-xl text-red" /></button>
         </div>
     );
 }

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Sorting } from "../../core/types";
+import { useState, useEffect } from "react";
+import { SortingType } from "../../core/types";
 import { useSearchParams } from "react-router-dom";
 
-const sortings: Sorting[] = [
+const sortings: SortingType[] = [
     { id: 1, name: "Newest", value: "createdAt" },
     { id: 2, name: "Price Lowest", value: "price" },
     { id: 3, name: "Price Highest", value: "price%3Adesc" }
@@ -19,11 +19,15 @@ const SelectSorting = () => {
         setSearch(search);
     }
 
+    useEffect(() => {
+        setSort(filteredSort);
+    }, [filteredSort]);
+
     return (
         <div className="py-8">
             <h1 className="text-xl text-left mb-4">SORT</h1>
             <select onChange={setSortValue} value={sort} className="border px-4 py-2 outline-none w-full">
-                {sortings.map((field: Sorting) => {
+                {sortings.map((field: SortingType) => {
                     const { id, name, value } = field;
                     return <option
                         key={id}
