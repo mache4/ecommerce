@@ -2,12 +2,12 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from './pages/Home';
-// import Overlay from './components/Overlay';
 
 import { OverlayContext } from './contexts/OverlayContext';
 import Shop from './pages/Shop';
 import Product from './pages/Product';
 import Footer from './components/Footer';
+// import Overlay from './components/Overlay';
 
 function App() {
     const [overlay, setOverlay] = useState(false);

@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 const sortings: SortingType[] = [
     { id: 1, name: "Newest", value: "createdAt" },
     { id: 2, name: "Price Lowest", value: "price" },
-    { id: 3, name: "Price Highest", value: "price%3Adesc" }
+    { id: 3, name: "Price Highest", value: "-price" }
 ];
 
 const SelectSorting = () => {

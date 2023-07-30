@@ -12,5 +12,6 @@ npm-debug.log
 build/
 dist/
 client/.parcel-cache
+vercel.json
 
 mirza.txt

@@ -1,13 +1,16 @@
 export interface ProductType {
-    id: number,
+    _id: string,
     name: string,
     img1: any,
     img2: any,
-    price: number
+    price: number,
+    category: string,
+    type: string,
+    createdAt: string
 }
 
 export interface CategoryType {
-    id: number,
+    _id: string,
     name: string,
     value: string
 }
@@ -25,8 +28,16 @@ export interface SortingType {
 }
 
 export interface CartItemType {
-    id: number,
+    id: string,
     name: string,
     image: any,
     price: number
+}
+
+export interface HomeImageType {
+    _id: string,
+    name: string,
+    image: string,
+    type: string,
+    createdAt: string
 }

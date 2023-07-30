@@ -18,7 +18,7 @@ export const patchCartItem = (id: any, number: any) => async (dispatch: any) => 
     }
 }
 
-export const removeCartItem = (id: any) => async (dispatch: any) => {
+export const removeCartItem = (id: string) => async (dispatch: any) => {
     try {
         dispatch({ type: REMOVE_CART_ITEM, id });
     } catch (error) {

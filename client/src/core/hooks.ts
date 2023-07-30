@@ -12,10 +12,6 @@ export function useCategories() {
     return useQuery(["categories"], async () => api.getCategories().then((res) => res.data));
 };
 
-// export function useHomePhotos() {
-//     return useQuery(["home-photos"], async () => api.getHomePhotos().then((res) => res.data.data));
-// };
-
 export function useProducts(query: QueryType, search: any) {
     const [data, setData]: any = useState({});
     const [loading, setLoading] = useState(false);
@@ -26,7 +22,8 @@ export function useProducts(query: QueryType, search: any) {
             try {
                 setLoading(true);
                 const res = await api.getProducts(query);
-                setData(res.data.data);
+                console.log(res)
+                setData(res.data);
             } catch (err) {
                 setError(true);
             }
@@ -38,7 +35,7 @@ export function useProducts(query: QueryType, search: any) {
     return { data, loading, error };
 };
 
-export function useProduct(id: number) {
+export function useProduct(id: string | undefined) {
     const [data, setData]: any = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -47,8 +44,8 @@ export function useProduct(id: number) {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const res = await api.getProduct(id)
-                setData(res.data.data);
+                const res = await api.getProduct(id);
+                setData(res.data);
             } catch (err) {
                 setError(true);
             }
@@ -69,8 +66,8 @@ export function useHomePhotos() {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const res = await api.getHomePhotos();
-                setData(res.data.data);
+                const res = await api.getHomeImages();
+                setData(res.data);
             } catch (err) {
                 setError(true);
             }

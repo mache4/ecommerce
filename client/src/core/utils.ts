@@ -1,4 +1,4 @@
-export const itemExists = (arr: any, id: number): boolean => {
+export const itemExists = (arr: any, id: string | undefined): boolean => {
     return arr.some((el: any) => {
         return el.id === id;
     });

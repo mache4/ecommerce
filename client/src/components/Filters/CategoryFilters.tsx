@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 const CategoryFilters = () => {
     const getCategories = useCategories();
-    const items = useMemo(() => getCategories?.data?.data ?? [], [getCategories.data]);
+    const items = useMemo(() => getCategories?.data ?? [], [getCategories.data]);
 
     const [search, setSearch] = useSearchParams();
     let filteredCategories = useMemo(() => search.get("categories")?.toLowerCase().split(",") ?? [], [search]);
@@ -34,9 +34,9 @@ const CategoryFilters = () => {
     return (
         <div className="py-8 border-t border-dark-grey">
             <h1 className="text-xl text-left mb-4">CATEGORIES</h1>
-            {items.map((field: { attributes: CategoryType }) => {
-                const { id, name, value } = field.attributes;
-                return <div className="flex justify-between my-2" key={id}>
+            {items.map((category: CategoryType) => {
+                const { _id, name, value } = category;
+                return <div className="flex justify-between my-2" key={_id}>
                     <label>{name}</label>
                     <div className="flex items-center">
                         <input

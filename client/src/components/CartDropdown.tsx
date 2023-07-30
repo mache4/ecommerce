@@ -17,7 +17,6 @@ const CartDropdown = (props: Props) => {
             {cartItems.length > 0 && <>
                 <div className="overflow-auto" style={{ height: "25rem" }}>
                     {cartItems?.map((i: CartItemType) => {
-                        console.log(i.id)
                         totalPrice += i.price;
                         return <CartItem
                             key={i.id}
@@ -43,13 +42,13 @@ const CartItem = (props: CartItemType) => {
     const dispatch = useAppDispatch();
     const { id, name, image, price } = props;
 
-    const removeItem = (id: number) => {
+    const removeItem = (id: string) => {
         dispatch(removeCartItem(id));
     }
 
     return (
         <div className="relative flex items-center shadow-md mb-1">
-            <img className="object-cover w-1/2" src={`http://localhost:1337${image.data.attributes.url}`} alt="" />
+            <img className="object-cover w-1/2" src={image} alt="" />
             <div className="w-1/2 text-left pl-2">
                 <p className="text-base">{name}</p>
                 <p className="text-base">${price}</p>

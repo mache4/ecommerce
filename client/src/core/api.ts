@@ -1,33 +1,27 @@
 import axios from "axios";
-import { QueryType } from "./types";
+import { ProductType, QueryType, HomeImageType } from "./types";
 
-const token = "4cc74b7f4c958fc55561177fdebb860cd1c2f47d031a648ea16acfe90aebdb6fcb701097a7d8e688900b2589535ddbf49dc61388ce4b1b1af4db823b242a0c19a3f46544e166005bcfbc3865316d40fabb17ab4b2ba1bef707071b300e0a6fd3f2ecbee3a09e4cef304301e146a215ad2c3b8d65319a92c8fd98c5ac82e8e85c";
+const API = axios.create({ baseURL: "http://localhost:8080" });
 
-const API = axios.create({ baseURL: "http://localhost:1337/api" });
+export const getCategories = () => API.get("/categories");
 
-API.interceptors.request.use((req: any) => {
-    // console.log("URL: ", process.env.REACT_APP_API_URL)
-    // console.log("TOKEN: ", process.env.REACT_APP_API_TOKEN)
-    req.headers.Authorization = `bearer ${token}`;
-    return req;
-});
-
+export const addProduct = (data: ProductType) => API.post("/products", data);
 export const getProducts = (query: QueryType) => {
-    let queryString = "/products?populate=*";
+    let queryString = "/products?";
     const { categories, sort, maxPrice } = query;
+    if (sort)
+        queryString = queryString.concat(`sort=${sort}`);
     if (categories)
         queryString = queryString.concat(`${categories.map(
-            (category: string) => `&filters[category][value][$eq]=${category}`
+            (category: string) => `&categories=${category}`
         ).join("")}`);
-    if (sort)
-        queryString = queryString.concat(`&sort=${sort}`);
     if (maxPrice)
-        queryString = queryString.concat(`&filters[price][$lte]=${maxPrice}`);
+        queryString = queryString.concat(`&maxPrice=${maxPrice}`);
 
     return API.get(queryString);
 }
-export const getFeaturedProducts = () => API.get(`/products?filters[type][$eq]=featured&populate=*`);
-export const getProduct = (id: number) => API.get(`/products/${id}?populate=*`);
+export const getFeaturedProducts = () => API.get("/products?type=featured");
+export const getProduct = (id: string | undefined) => API.get(`/products/${id}`);
 
-export const getCategories = () => API.get("/categories");
-export const getHomePhotos = () => API.get("/home-photos?populate=*");
+export const addHomeImage = (data: HomeImageType) => API.post("/home-images", data);
+export const getHomeImages = () => API.get("/home-images");

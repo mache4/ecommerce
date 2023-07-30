@@ -14,16 +14,20 @@ const Shop = () => {
     }, search);
 
     let products = <p className="text-white text-lg">No products found.</p>;
+    console.log(data)
     if (data.length > 0)
-        products = data.map((product: { id: number, attributes: ProductType }) => {
-            const { name, img1, img2, price } = product.attributes;
+        products = data.map((product: ProductType) => {
+            const { _id, name, img1, img2, price, category, type, createdAt } = product;
             return <ProductCard
-                key={product.id}
-                id={product.id}
+                key={_id}
+                _id={_id}
                 name={name}
+                price={price}
                 img1={img1}
                 img2={img2}
-                price={price} />;
+                category={category}
+                type={type}
+                createdAt={createdAt} />;
         });
 
     return (
