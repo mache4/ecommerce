@@ -12,13 +12,13 @@ const CategoriesDropdown = (props: Props) => {
     const items = useMemo(() => getCategories?.data ?? [], [getCategories.data]);
 
     return (
-        <div className={`absolute top-full left-0 border border-t-0 border-dark-blue bg-white z-50 ${props.show ? "" : "hidden"}`} style={{ width: "200%" }}>
-            <div className="menu flex flex-col">
-                {items.map((category: CategoryType) => {
+        <div className={`absolute top-full left-0 border border-t-0 rounded-sm border-dark-blue bg-white z-50 ${props.show ? "" : "hidden"}`} style={{ width: "200%" }}>
+            <div className="flex flex-col">
+                {items && items.map((category: CategoryType) => {
                     const { value, name } = category;
                     return <Link
                         key={category._id}
-                        className="menu-item border-t px-5 py-2 hover:bg-very-light-blue"
+                        className="border-t text-base border-t-dark-blue px-5 py-2.5 hover:bg-very-light-blue"
                         to={`/shop?sort=createdAt&maxPrice=0&categories=${value}`}>{name}</Link>;
                 })}
             </div>

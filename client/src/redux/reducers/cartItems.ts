@@ -1,7 +1,7 @@
 import { ADD_CART_ITEM, REMOVE_CART_ITEM, PATCH_CART_ITEM, RESET_CART_ITEMS } from "../../constants/actionTypes";
 // GET_CART_ITEMS
 
-export default function cartItems(state: any = JSON.parse(localStorage.getItem("cartItems") || "{}"), action: any) {
+export default function cartItems(state: any = [], action: any) {
     switch (action.type) {
         case ADD_CART_ITEM:
             localStorage.setItem("cartItems", JSON.stringify(state.concat(action.data)));

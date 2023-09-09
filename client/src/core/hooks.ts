@@ -22,7 +22,6 @@ export function useProducts(query: QueryType, search: any) {
             try {
                 setLoading(true);
                 const res = await api.getProducts(query);
-                console.log(res)
                 setData(res.data);
             } catch (err) {
                 setError(true);
@@ -58,7 +57,7 @@ export function useProduct(id: string | undefined) {
 };
 
 export function useHomePhotos() {
-    const [data, setData]: any = useState(null);
+    const [data, setData]: any = useState();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 

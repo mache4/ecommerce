@@ -30,22 +30,22 @@ const Main = (props: Props) => {
 
     return (
         <>
-            {props.data && <div className="grid-cols-8 grid-rows-4 gap-0.5 m-10 text-white lg:grid inline" style={{ height: windowSize[0] > 1025 ? "70vh" : "20vh" }}>
-                <div className="relative row-start-1 row-end-5 col-start-1 col-end-5 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=Jacket`)}>
-                    <LazyLoadImage className="opacity-80 object-cover h-full w-full" src={props.data[0].image} alt="" />
-                    <p className="absolute top-2/4 left-2/4 font-bold text-4xl -translate-x-2/4 -translate-y-2/4">JACKETS</p>
+            {props.data && <div className="grid-cols-4 grid-rows-4 gap-0.5 m-2 lg:m-10 text-white grid" style={{ height: windowSize[0] > 1025 ? "70vh" : "50vh" }}>
+                <div className="relative row-start-1 row-end-3 col-start-1 col-end-3 lg:row-end-5 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=jacket`)}>
+                    <LazyLoadImage className="object-cover h-full w-full" src={props.data[0].image} alt="" />
+                    <p className="absolute top-2/4 left-2/4 font-bold text-xl md:text-3xl lg:text-4xl -translate-x-2/4 -translate-y-2/4">JACKETS</p>
                 </div>
-                <div className="relative row-start-1 row-end-3 col-start-5 col-end-9 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=Jeans`)}>
-                    <LazyLoadImage className="opacity-80 object-cover h-full w-full" src={props.data[1].image} alt="" />
-                    <p className="absolute top-2/4 left-2/4 font-bold text-4xl -translate-x-2/4 -translate-y-2/4">JEANS</p>
+                <div className="relative row-start-1 row-end-3 col-start-3 col-end-5 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=jeans`)}>
+                    <LazyLoadImage className="object-cover h-full w-full" src={props.data[1].image} alt="" />
+                    <p className="absolute top-2/4 left-2/4 font-bold text-xl md:text-3xl lg:text-4xl -translate-x-2/4 -translate-y-2/4">JEANS</p>
                 </div>
-                <div className="relative row-start-3 row-end-5 col-start-5 col-end-7 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=Shirt`)}>
-                    <LazyLoadImage className="opacity-80 object-cover h-full w-full" src={props.data[2].image} alt="" />
-                    <p className="absolute top-2/4 left-2/4 font-bold text-4xl -translate-x-2/4 -translate-y-2/4">SHIRTS</p>
+                <div className="relative row-start-3 row-end-5 col-start-3 col-end-5 lg:col-end-4 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=shirt`)}>
+                    <LazyLoadImage className="object-cover h-full w-full" src={props.data[2].image} alt="" />
+                    <p className="absolute top-2/4 left-2/4 font-bold text-xl md:text-3xl lg:text-4xl -translate-x-2/4 -translate-y-2/4">SHIRTS</p>
                 </div>
-                <div className="relative row-start-3 row-end-5 col-start-7 col-end-9 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=Coat`)}>
-                    <LazyLoadImage className="opacity-80 object-cover h-full w-full" src={props.data[3].image} alt="" />
-                    <p className="absolute top-2/4 left-2/4 font-bold text-4xl -translate-x-2/4 -translate-y-2/4">COATS</p>
+                <div className="relative row-start-3 row-end-5 col-start-1 col-end-3 lg:col-start-4 lg:col-end-5 overflow-hidden cursor-pointer" onClick={() => navigate(`/shop?categories=coat`)}>
+                    <LazyLoadImage className="object-cover h-full w-full" src={props.data[3].image} alt="" />
+                    <p className="absolute top-2/4 left-2/4 font-bold text-xl md:text-3xl lg:text-4xl -translate-x-2/4 -translate-y-2/4">COATS</p>
                 </div>
             </div>}
         </>

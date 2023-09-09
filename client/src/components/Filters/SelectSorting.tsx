@@ -26,13 +26,13 @@ const SelectSorting = () => {
     return (
         <div className="py-8">
             <h1 className="text-xl text-left mb-4">SORT</h1>
-            <select onChange={setSortValue} value={sort} className="border px-4 py-2 outline-none w-full">
+            <select onChange={setSortValue} value={sort} className="border px-4 py-2 outline-none w-full text-dark-blue">
                 {sortings.map((field: SortingType) => {
                     const { id, name, value } = field;
                     return <option
                         key={id}
                         value={value}
-                        className="w-4 h-4 mr-5">
+                        className="w-4 h-4 mr-5 text-dark-blue">
                         {name}
                     </option>
                 })}

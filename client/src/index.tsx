@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import store from "./redux/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -15,11 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-            <QueryClientProvider client={queryClient}>
-                <BrowserRouter>
+            <Router>
+                <QueryClientProvider client={queryClient}>
                     <App />
-                </BrowserRouter>
-            </QueryClientProvider>
+                </QueryClientProvider>
+            </Router>
         </Provider>
     </React.StrictMode>
 );

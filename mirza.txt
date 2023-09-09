@@ -1,34 +1,31 @@
 MAIN
-- dodati neki text na slider-u
-- provaliti zasto loader za slike ne radi (lazy-load)
+- click outside component (cartDropdown, sidebar, filters sidebar)
 - mesta za modal-e (KORISTITI props.children ZA DODATNE MODAL-E):
     - add to cart
     - remove from cart
     - submit order
-- dodati dva input-type range-a i izvuci default vrednosti iz databaze minPrice i maxPrice
-- napraviti error page za pogresan route (napraviti layout component za route)
-- link iz Main-a skroluje do kraja Shop page-a
 - stripe payment
 
-MANJE BITNO
-- stilizovati: Filter, ProductCard, Product, Cart
-- max 20 karaktera za naziv product-a
-- stilizovanje ProductCard-a (samimi tim moram da dodajem jos kategorija (size, gender) da bi izgledalo potpunije)
-- ispraviti sve typescript propuste (ima malo)
-- dodati jos product-a (samimi tim dodati paginating)
-
 RESPONSIVE
-- navbar kao sidebar (mozda napraviti sidebar da se koristi na vise componenata (filters i cart))
-- filters da bude sidebar na manjim ekranima
-- footer smanjiti
 
 REDUX
 - KORISTITI redux persist
 - KORISTITI hooks.ts ZA ONO STO NE ZELIM DA IMAM U REDUX-U (ONO STO MI NE TREBA STALNO)
 - token za cartItems u localStorage-u
 
+MANJE BITNO
+- button animacija slider
+- napraviti error page za pogresan route (napraviti layout component za route)
+- dodati dva input-type range-a i izvuci default vrednosti iz databaze minPrice i maxPrice
+- stilizovati: Filter, ProductCard, Product, Cart
+- max 20 karaktera za naziv product-a
+- stilizovanje ProductCard-a (samimi tim moram da dodajem jos kategorija (size, gender) da bi izgledalo potpunije)
+- ispraviti sve typescript propuste (ima malo)
+- dodati jos product-a (samimi tim dodati paginating)
+- navbar kao sidebar (mozda napraviti sidebar da se koristi na vise componenata (filters i cart))
+
 POSTUPLOAD
 - napraviti process.env
 - uploadovati ceo projekat pa onda pojedinacno server i client zbog hostovanja (ova dva privatno)
-- pronaci ime za app (Faz eCommerce)
-- slider laguje ali to je vrv do debug-a, kada se aplikacija builduje nece biti lagav
+- pronaci ime za app i LOGO (Faz eCommerce)
+- ikonica
