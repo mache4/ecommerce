@@ -19,7 +19,8 @@ const Product = () => {
             id: id,
             name: data?.name,
             image: data?.img1,
-            price: data?.price
+            price: data?.price,
+            priceId: data?.priceId
         }));
     }
 

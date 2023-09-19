@@ -1,10 +1,10 @@
 MAIN
 - click outside component (cartDropdown, sidebar, filters sidebar)
 - mesta za modal-e (KORISTITI props.children ZA DODATNE MODAL-E):
-    - add to cart
+    - added to cart
     - remove from cart
     - submit order
-- stripe payment
+- ja nemam cart na manjim ekranima jebote
 
 RESPONSIVE
 
@@ -23,6 +23,7 @@ MANJE BITNO
 - ispraviti sve typescript propuste (ima malo)
 - dodati jos product-a (samimi tim dodati paginating)
 - navbar kao sidebar (mozda napraviti sidebar da se koristi na vise componenata (filters i cart))
+- stripe payment
 
 POSTUPLOAD
 - napraviti process.env

@@ -4,6 +4,7 @@ export interface ProductType {
     img1: any,
     img2: any,
     price: number,
+    priceId: string,
     category: string,
     type: string,
     createdAt: string
@@ -31,7 +32,8 @@ export interface CartItemType {
     id: string,
     name: string,
     image: any,
-    price: number
+    price: number,
+    priceId: string
 }
 
 export interface HomeImageType {

@@ -10,12 +10,12 @@ const ProductCard = (props: ProductType) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const cartItems = useAppSelector(state => state.cartItems);
-    const { name, _id, img1, img2, price } = props;
+    const { name, _id, img1, img2, price, priceId } = props;
 
     const linkClicked = (id: string) => navigate(`/products/${id}`);
 
     const addToCart = (id: string, name: string, image: string, price: number) => {
-        dispatch(addCartItem({ id, name, image, price }));
+        dispatch(addCartItem({ id, name, image, price, priceId }));
     }
 
     return (

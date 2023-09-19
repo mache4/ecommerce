@@ -31,12 +31,13 @@ const Shop = () => {
     let products = <p className="text-white text-lg">No products found.</p>;
     if (data && data.length > 0)
         products = data.map((product: ProductType) => {
-            const { _id, name, img1, img2, price, category, type, createdAt } = product;
+            const { _id, name, img1, img2, price, priceId, category, type, createdAt } = product;
             return <ProductCard
                 key={_id}
                 _id={_id}
                 name={name}
                 price={price}
+                priceId={priceId}
                 img1={img1}
                 img2={img2}
                 category={category}
