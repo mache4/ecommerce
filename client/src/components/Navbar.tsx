@@ -26,7 +26,7 @@ const Navbar = () => {
 
     return (
         <div className="w-full bg-white text-dark-blue fixed z-30 font-bold text-xl px-8 sm:px-16 shadow-md h-20 flex items-center">
-            <div className="text-2xl w-1/2 lg:w-1/6">LOGO</div>
+            <div className="text-2xl w-1/2 lg:w-1/6 font-avro">FAZ</div>
 
             {/* menu */}
             <div className="relative w-3/6 h-full items-center gap-10 hidden lg:flex">

@@ -17,7 +17,8 @@ module.exports = {
             "dark-grey": "#808080",
         },
         fontFamily: {
-            "poppins": ['"Poppins"']
+            "poppins": ['"Poppins"'],
+            "avro": ["Arvo"]
         }
     },
     plugins: [],

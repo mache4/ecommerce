@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ProductType, QueryType, HomeImageType } from "./types";
 
-const API = axios.create({ baseURL: "http://localhost:8080" }); // https://ecommerce-server-mu-nine.vercel.app
+const API = axios.create({ baseURL: "https://ecommerce-server-mu-nine.vercel.app" }); // http://localhost:8080
 export const getCategories = () => API.get("/categories");
 
 export const addProduct = (data: ProductType) => API.post("/products", data);

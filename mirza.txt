@@ -1,10 +1,10 @@
 MAIN
+- stilizovati cart na manjim ekranima
 - click outside component (cartDropdown, sidebar, filters sidebar)
 - mesta za modal-e (KORISTITI props.children ZA DODATNE MODAL-E):
     - added to cart
     - remove from cart
     - submit order
-- ja nemam cart na manjim ekranima jebote
 
 RESPONSIVE
 
