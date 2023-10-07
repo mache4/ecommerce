@@ -45,7 +45,6 @@ const FeaturedProducts = (props: Props) => {
                     })}
                 </div>
             </div>
-            {/* {props.data && <LazyLoadImage className="absolute top-0 left-0 opacity-80 object-cover h-full w-full" src={props.data[0].image} alt="" />} */}
         </div>
     );
 }

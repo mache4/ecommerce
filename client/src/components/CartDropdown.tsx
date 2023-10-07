@@ -27,11 +27,9 @@ const CartDropdown = (props: Props) => {
         return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
 
-    const proceed = () => {
-        api.checkout(cartItems);
-    }
+    const proceed = () => api.checkout(cartItems);
 
-    console.log("PK_TEST", String(process.env.PK_TEST))
+    console.log("PK_TEST", String(process.env.PK_TEST));
 
     return (
         <div className={`fixed lg:absolute flex flex-col lg:justify-center items-center border-2 lg:border-dark-blue h-full w-full lg:w-80 lg:h-auto top-0 lg:top-full right-0 py-10 lg:py-0 bg-dark-blue text-white lg:text-black lg:bg-white z-50 transition-transform 
@@ -71,9 +69,7 @@ const CartItem = (props: CartItemType) => {
     const dispatch = useAppDispatch();
     const { id, name, image, price } = props;
 
-    const removeItem = (id: string) => {
-        dispatch(removeCartItem(id));
-    }
+    const removeItem = (id: string) => dispatch(removeCartItem(id));
 
     return (
         <div className="relative flex items-center border border-white lg:shadow-md lg:mb-1 mx-auto sm:w-3/4 md:w-1/2 lg:w-auto">

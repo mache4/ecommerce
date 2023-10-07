@@ -52,6 +52,4 @@ const Product = () => {
     );
 }
 
-// style={{ height: "calc(100vh - 240px)" }}
-
 export default Product;

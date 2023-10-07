@@ -5,7 +5,7 @@ import ProductCard from "../components/ProductCard";
 import { ProductType } from "../core/types";
 import { useSearchParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
-import { TbArrowBigRightFilled, TbArrowBigLeftFilled } from "react-icons/tb";
+import { TbArrowBigRightFilled } from "react-icons/tb";
 import { ImCross } from "react-icons/im";
 
 const Shop = () => {

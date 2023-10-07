@@ -15,7 +15,7 @@ const Slider = (props: Props) => {
     const delay = 4500;
     const navigate = useNavigate();
 
-    function resetTimeout() {
+    const resetTimeout = () => {
         if (timeoutRef.current)
             clearTimeout(timeoutRef.current);
     }
@@ -36,7 +36,6 @@ const Slider = (props: Props) => {
     return (
         <div className="relative overflow-hidden" style={{ height: "90vh" }}>
             <div className="absolute top-1/2 -translate-y-1/2 left-20 z-10 text-left w-2/3 md:w-1/2">
-                {/* <h1 className="text-white text-6xl font-extrabold uppercase leading-tight">The outfits you are looking for are here,</h1> */}
                 <h1 className="text-white text-4xl md:text-6xl font-extrabold uppercase leading-tight mb-10">
                     The outfits you are looking for are here<span className="hidden lg:inline">, The Only Wardrobe You Need</span>.
                 </h1>

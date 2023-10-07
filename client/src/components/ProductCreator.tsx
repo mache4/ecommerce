@@ -13,8 +13,6 @@ const ProductCreator = (props: Props) => {
     const submitForm = async () => {
         const imageBase64: any = await convertBase64(imageRef.current.files[0]);
 
-        console.log(imageBase64)
-
         addHomeImage({
             _id: "",
             name: nameRef.current.value,
@@ -22,7 +20,6 @@ const ProductCreator = (props: Props) => {
             type: typeRef.current.value,
             createdAt: Date.now().toString()
         })
-        // console.log(convertBase64(image1Ref.current.files[0]))
     }
 
     const convertBase64 = (file: any) => {
